@@ -38,9 +38,9 @@ public class UserController {
     {
         System.out.println("Regsiter User : "+this.registrationUser);
         String msg = "User registered successfully";
-        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Sonuç", msg));
+        FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, msg, msg));
         FacesContext.getCurrentInstance().getExternalContext().getFlash().setKeepMessages(true);
-        return "registration.jsf?faces-redirect=true";//redirect ettiğimiz sayfanın adının browserda görünmesi için true yapılır.
+        return "registration.xhtml?faces-redirect=true";//redirect ettiğimiz sayfanın adının browserda görünmesi için true yapılır.
     }
     
     

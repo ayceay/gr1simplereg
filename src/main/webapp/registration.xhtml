@@ -9,9 +9,36 @@
     <h:body>
         <h:form id="registrationForm">
             
-            <p:panel header="Registration Form" style="width:500px;">
-                
+            <p:panel header="Registration Form" style="width:500px;">                
+                <p:messages/>
+                <p:panelGrid columns="2">
+                    <p:outputLabel value="User Name : "/>
+                    <p:inputText id="username" label="User Name" value="#{userController.registrationUser.userName}"/>
+                    
+                    <p:outputLabel value="Password : "/>
+                    <p:inputText id="password" label="Password" value="#{userController.registrationUser.password}"/>
+                    
+                    <p:outputLabel value="First Name : "/>
+                    <p:inputText id="firstname" label="First Name" value="#{userController.registrationUser.firstName}"/>
+                    
+                    <p:outputLabel value="Last Name : "/>
+                    <p:inputText id="lastname" label="Last Name" value="#{userController.registrationUser.lastName}"/>
+                    
+                    <p:outputLabel value="E-mail : "/>
+                    <p:inputText id="email" label="E-mail" value="#{userController.registrationUser.email}"/>
+                    
+                    <p:outputLabel value="Phone : "/>
+                    <p:inputText id="phone" label="Phone" value="#{userController.registrationUser.phone}"/>
+                    
+                    <p:outputLabel value="Age : "/>
+                    <p:inputMask id="age" label="Age" value="#{userController.registrationUser.age}" mask="99?99"/>
+                    
+                    <p:outputLabel value=" "/>
+                    <p:commandButton value="Kaydet" action="#{userController.Register()}" update="registrationForm"/>
+                </p:panelGrid>
+            
             </p:panel>
+            
             
         </h:form>
     </h:body>
